@@ -12,7 +12,19 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+use App\Http\Controllers\LibraryController;
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [LibraryController::class, 'index']);
+Route::get('/book/register', [LibraryController::class, 'registerBook'])->middleware('auth');
+Route::post('/book', [LibraryController::class, 'store']);
+
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 });
