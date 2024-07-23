@@ -1,15 +1,16 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+@extends('layouts.main')
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <x-welcome />
-            </div>
-        </div>
-    </div>
-</x-app-layout>
+@section('content')
+<div class="masthead">
+<div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+<h1 style="font-size: 36px;">Você será redirecionado automaticamente para outra página.</h1>
+
+
+<script>
+    // Redireciona após 3 segundos
+    setTimeout(function() {
+        window.location.href = "{{ url('/') }}";
+    }, 3000);
+</script>
+</div></div>
+@endsection

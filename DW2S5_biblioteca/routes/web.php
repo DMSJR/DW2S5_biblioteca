@@ -17,8 +17,14 @@ use App\Http\Controllers\LibraryController;
 Route::get('/', [LibraryController::class, 'index']);
 Route::get('/book/register', [LibraryController::class, 'registerBook'])->middleware('auth');
 Route::post('/book', [LibraryController::class, 'store']);
-
-
+Route::get('/book/{id}', [LibraryController::class, 'show'])->name('book.show');;
+Route::delete('/book/{id}', [LibraryController::class, 'destroy'])->middleware('auth');
+Route::get('book/edit/{id}', [LibraryController::class, 'edit'])->middleware('auth');
+Route::put('book/update/{id}', [LibraryController::class, 'update'])->middleware('auth');
+Route::get('search', [LibraryController::class, 'search'])->name('book.search');
+Route::get('/search-test', function () {
+    dd('Test route called');
+});
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

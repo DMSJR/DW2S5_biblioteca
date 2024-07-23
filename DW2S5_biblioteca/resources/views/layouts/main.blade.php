@@ -25,7 +25,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="#page-top">DW2S5</a>
+            <a class="navbar-brand" href="/#page-top">DW2S5 - biblioteca</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -36,12 +36,12 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="/#about">Sobre</a></li>
                     @auth
-                    <li class="nav-item"><a class="nav-link" href="/book/register">Cadastrar livro</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/book/register">Cadastrar livro</a></li>
                         <li class="nav-item">
                             <form action="/logout" method="POST">
                                 @csrf
                                 <a href="/logout" class="nav-link" onclick="event.preventDefault();
-                                    this.closest('form').submit();">
+                                            this.closest('form').submit();">
                                     Sair</a>
                             </form>
                         </li>
@@ -56,7 +56,7 @@
             </div>
         </div>
     </nav>
-
+    
 
     <main>
         <div class="container-fluid">
